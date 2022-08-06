@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@netlify/plugin-nextjs": "^4.14.1",
     "bcryptjs": "^2.4.3",
     "lodash": "^4.17.21",
     "mongodb": "^4.8.1",
