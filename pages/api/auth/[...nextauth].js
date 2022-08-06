@@ -51,7 +51,7 @@ export default NextAuth({
     encryption: true,
   },
 
-  secret: process.env.SECRET_KEY,
+  secret: process.env.NEXTAUTH_SECRET,
 
   
 
