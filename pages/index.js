@@ -4,6 +4,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Right from "../components/gate/right";
 import Left from "../components/gate/left";
+import Head from "next/head";
 
 function Home({ session }) {
   if (!session) {
