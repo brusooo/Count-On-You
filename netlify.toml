@@ -1,2 +1,6 @@
 [build.environment]
   NPM_FLAGS = "--legacy-peer-deps"
+  NETLIFY_NEXT_PLUGIN_SKIP = "true"
+[build]
+  command = "npm run build && npm run export"
+  publish = "out"
