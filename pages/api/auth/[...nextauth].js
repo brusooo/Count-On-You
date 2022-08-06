@@ -45,13 +45,13 @@ export default NextAuth({
       },
     }),
   ],
-
+  
+  
   jwt: {
-    secret: process.env.SECRET_KEY,
+    secret: process.env.NEXTAUTH_SECRET,
     encryption: true,
   },
 
-  secret: process.env.NEXTAUTH_SECRET,
 
   
 
