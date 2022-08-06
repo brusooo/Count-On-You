@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .text_shadow {
+    text-shadow: 0 0 35px #ffffff;
+  }
+}
+
+@font-face {
+  font-family: "Comforter";
+  src: url("/fonts/Comforter.ttf");
+}
+
+@font-face {
+  font-family: "Mochiy Pop One";
+  src: url("/fonts/MochiyPopOne.ttf");
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  min-height: 100vh;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+.Toastify__progress-bar-theme--dark{
+  background : linear-gradient(
+    to right,
+    #4cd964,
+    #5ac8fa,
+    #007aff,
+    #34aadc,
+    #5856d6,
+    #ff2d55
+  ) !important;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
