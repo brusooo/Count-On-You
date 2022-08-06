@@ -51,6 +51,8 @@ export default NextAuth({
     encryption: true,
   },
 
+  secret: process.env.SECRET_KEY,
+
   
 
   database: process.env.MONGODB_URI,
