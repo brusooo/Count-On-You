@@ -23,12 +23,12 @@ const Profile = ({ dbData }) => {
   let localData = dbData;
 
 
-
   const [connected, setConnected] = useState(
     localData.message === undefined || localData.message === null
   );
 
-  if (localData.message == null || localData.data == []) {
+
+  if (localData.message === null || localData.data === []) {
     data.email = session.user.email;
     localData = data;
   }
@@ -38,9 +38,9 @@ const Profile = ({ dbData }) => {
 
   useEffect(() => {
     setwinReady(true);
-    let sesCount = window.sessionStorage.getItem("sesCount");
+    let sesCount = window.localStorage.getItem("sesCount");
     if (!sesCount) {
-      window.sessionStorage.setItem("sesCount", 1);
+      window.localStorage.setItem("sesCount", 1);
       sesCount = 1;
     }
 
