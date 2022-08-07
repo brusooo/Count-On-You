@@ -38,7 +38,7 @@ export default NextAuth({
           }
         );
         let user = await result.json();
-        
+
         if (user) {
           return user;
         }
@@ -46,6 +46,8 @@ export default NextAuth({
       },
     }),
   ],
+
+  secret: process.env.SECRET_KEY,
 
   jwt: {
     secret: process.env.SECRET_KEY
