@@ -22,11 +22,13 @@ const Profile = ({ dbData }) => {
 
   let localData = dbData;
 
+
+
   const [connected, setConnected] = useState(
     localData.message === undefined || localData.message === null
   );
 
-  if (localData.message === "null" || localData.data == []) {
+  if (localData.message == null || localData.data == []) {
     data.email = session.user.email;
     localData = data;
   }

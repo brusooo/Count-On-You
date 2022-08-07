@@ -6,7 +6,7 @@ export default async function handler(req, res) {
   // console.log(client.topology.s.state)
   // if (client.topology.s.state !== 'connected'){
   //   return res.json({ error : 'not connected' });
-  // }
+  // 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 }
 
   const db = client.db("MyUsers");
   const usersData = db.collection("usersData");
