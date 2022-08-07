@@ -22,32 +22,17 @@ const Profile = ({ dbData }) => {
 
   let localData = dbData;
 
-
   const [connected, setConnected] = useState(
     localData.message === undefined || localData.message === null
   );
 
-
   if (localData.message === null || localData.data === []) {
     data.email = session.user.email;
     localData = data;
+    toast("👍  Login Successful! ", { toastId: "Success", theme: "dark" })
   }
 
-
   const [localdata, setlocaldata] = useState(localData);
-
-  useEffect(() => {
-    setwinReady(true);
-    let sesCount = window.localStorage.getItem("sesCount");
-    if (!sesCount) {
-      window.localStorage.setItem("sesCount", 1);
-      sesCount = 1;
-    }
-
-    if (!sesCount) {
-      toast("👍  Login Successful! ", { toastId: "Success", theme: "dark" });
-    }
-  }, []);
 
   const handlePencil = () => {
     setPencil(!pencil);
