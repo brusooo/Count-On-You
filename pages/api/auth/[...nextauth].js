@@ -38,7 +38,11 @@ export default NextAuth({
           }
         );
         let user = await result.json();
-        return user;
+        
+        if (user) {
+          return user;
+        }
+        return null;
       },
     }),
   ],
