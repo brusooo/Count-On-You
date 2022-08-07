@@ -29,7 +29,6 @@ const Profile = ({ dbData }) => {
   if (localData.message === null || localData.data === []) {
     data.email = session.user.email;
     localData = data;
-    toast("👍  Login Successful! ", { toastId: "Success", theme: "dark" })
   }
 
   const [localdata, setlocaldata] = useState(localData);
