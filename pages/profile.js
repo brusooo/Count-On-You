@@ -17,7 +17,6 @@ import Head from "next/head";
 const Profile = ({ dbData }) => {
   const { data: session } = useSession();
 
-  const [winReady, setwinReady] = useState(false);
   const [pencil, setPencil] = useState(false);
 
   let localData = dbData;
@@ -92,11 +91,10 @@ const Profile = ({ dbData }) => {
 
               {pencil ? (
                 <Add databaseData={localdata} setlocaldata={setlocaldata} />
-              ) : winReady ? (
+              ) :(
                 <Kanban databaseData={localdata} setlocaldata={setlocaldata} />
-              ) : (
-                <Load />
-              )}
+              ) 
+              }
             </>
           ) : (
             <Delay />
