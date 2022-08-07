@@ -19,6 +19,7 @@ module.exports = {
       'md': {'max': '900px'},
       'sm': {'max': '770px'},
       'vs': {'max': '550px'},
+      'short': {'max': '400px'},
     },
     keyframes: {
       blink: {

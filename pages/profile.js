@@ -83,7 +83,7 @@ const Profile = ({ dbData }) => {
           {connected ? (
             <>
               <div
-                className="absolute right-4 bottom-4 bg-[#4834D4] p-2 text-center cursor-pointer rounded-[50%]  text-white"
+                className="absolute right-4 bottom-4 z-20 bg-[#4834D4] p-2 text-center cursor-pointer rounded-[50%]  text-white"
                 onClick={handlePencil}
               >
                 <GiFeather className="text-2xl" />
