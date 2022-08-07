@@ -36,8 +36,7 @@ export default async function handler(req, res) {
         )
         .toArray();
 
-      console.log(users)
-      
+
       return res.json( { users } );
   }
 }

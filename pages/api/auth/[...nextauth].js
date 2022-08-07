@@ -5,7 +5,7 @@ import GoogleProvider from "next-auth/providers/google"
 
 export default NextAuth({
   session: {
-    jwt: true,
+    strategy: "jwt",
   },
 
   providers: [
@@ -47,8 +47,7 @@ export default NextAuth({
   ],
 
   jwt: {
-    secret: process.env.SECRET_KEY,
-    encryption: true,
+    secret: process.env.SECRET_KEY
   },
 
   

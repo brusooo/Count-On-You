@@ -2,9 +2,8 @@
 const nextConfig = {
   reactStrictMode: false,
   env: {
-    ORIGIN: 'http://localhost:3000',
+    ORIGIN: 'https://count-on-you.netlify.app',
     NEXTAUTH_SECRET : 'f20f360415671afb7200f42f79f6e373'
-    
   },
 }
 

@@ -28,7 +28,7 @@ function Home({ session }) {
   return (
     <>
       <Head>
-        <title>Account</title>
+        <title>Login</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="shortcut icon" href="/images/logo.svg"></link>
       </Head>
