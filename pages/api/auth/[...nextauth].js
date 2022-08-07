@@ -38,6 +38,7 @@ export default NextAuth({
           }
         );
         let user = await result.json();
+        console.log(user)
         if (user) {
           return user;
         }
