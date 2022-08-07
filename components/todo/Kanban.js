@@ -8,7 +8,7 @@ import DropContainer from "./DropContainer";
 const Kanban = ({ databaseData , setlocaldata  }) => {
 
   async function save(data) {
-    let response = await fetch("http://localhost:3000/api/auth/usersData", {
+    let response = await fetch(`${process.env.ORIGIN}/api/auth/usersData`, {
       method: "POST",
       body: JSON.stringify(data),
     });
