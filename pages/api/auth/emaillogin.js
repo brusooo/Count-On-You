@@ -4,9 +4,11 @@ import bcrypt from 'bcryptjs';
 
 
 export default async function handler(req, res) {
+  console.log("here")
   const client = await clientPromise;
   const db = client.db("MyUsers");
   const todoUsers = db.collection("users");
+  console.log("here1")
   
   switch (req.method) {
     case "POST":
@@ -14,7 +16,6 @@ export default async function handler(req, res) {
       const user = await todoUsers
         .find({ name : bodyObject.name }) 
         .toArray();
-      console.log(user)
       if (user.length == 0) {
         let newUser = await todoUsers.insertOne(bodyObject);
         return res.json({ result: "Successful" });
