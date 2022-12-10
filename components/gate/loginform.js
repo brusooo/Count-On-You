@@ -50,7 +50,7 @@ const LoginForm = ({ login, create, setVisibility }) => {
     };
 
     let response = await fetch(
-      `${window.location.origin}/api/auth/emaillogin`,
+      `https://countonyou.netlify.app/api/auth/emaillogin`,
       {
         method: "POST",
         body: JSON.stringify(post),

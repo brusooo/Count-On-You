@@ -4,11 +4,9 @@ import bcrypt from 'bcryptjs';
 
 
 export default async function handler(req, res) {
-  console.log("here")
   const client = await clientPromise;
   const db = client.db("MyUsers");
   const todoUsers = db.collection("users");
-  console.log("here1")
   
   switch (req.method) {
     case "POST":
