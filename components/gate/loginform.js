@@ -61,7 +61,6 @@ const LoginForm = ({ login, create, setVisibility }) => {
     );
 
     let user = await response.json();
-    console.log(user)
     setTimeout(() => {
       setVisibility(false);
       if (user.result == "Successful") {
