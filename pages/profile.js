@@ -20,18 +20,18 @@ const Profile = ({ dbData }) => {
   const [pencil, setPencil] = useState(false);
 
   let localData = dbData;
-
+  
   const [connected, setConnected] = useState(
     localData.message === undefined || localData.message === null
   );
 
-  if (localData.message === null || localData.data === []) {
+  if (localData.message == null || localData.data == []) {
     data.email = session.user.email;
     localData = data;
   }
 
   const [localdata, setlocaldata] = useState(localData);
-
+  
   const handlePencil = () => {
     setPencil(!pencil);
   };
@@ -137,8 +137,9 @@ export async function getServerSideProps(context) {
         },
       }
     );
-
+    
     if (users.status !== 500) {
+      
       dbData = await users.json().then((data) => {
         if (data.users.length > 0) {
           return data.users[0];

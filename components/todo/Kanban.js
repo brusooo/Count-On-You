@@ -6,7 +6,7 @@ import DropContainer from "./DropContainer";
 
 
 const Kanban = ({ databaseData , setlocaldata  }) => {
-
+  
   async function save(data) {
     let response = await fetch(`${process.env.ORIGIN}/api/auth/usersData`, {
       method: "POST",
@@ -66,6 +66,8 @@ const Kanban = ({ databaseData , setlocaldata  }) => {
       });
     }
   };
+
+  
   const { users, columns } = databaseData.data;
   
   return (

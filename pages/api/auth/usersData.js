@@ -2,7 +2,6 @@ import clientPromise from "../../../lib/mongodb";
 
 export default async function handler(req, res) {
   const client = await clientPromise;
-  
   // console.log(client.topology.s.state)
   // if (client.topology.s.state !== 'connected'){
   //   return res.json({ error : 'not connected' });
@@ -10,6 +9,7 @@ export default async function handler(req, res) {
 
   const db = client.db("MyUsers");
   const usersData = db.collection("usersData");
+  
 
   switch (req.method) {
     case "POST":
@@ -35,8 +35,6 @@ export default async function handler(req, res) {
           { projection: { _id: 0, name: 0 } }
         )
         .toArray();
-
-
-      return res.json( { users } );
+      return res.json({ users });
   }
 }
