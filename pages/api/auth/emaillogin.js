@@ -7,6 +7,7 @@ export default async function handler(req, res) {
   const client = await clientPromise;
   const db = client.db("MyUsers");
   const todoUsers = db.collection("users");
+  
   switch (req.method) {
     case "POST":
       let bodyObject = req.body;
