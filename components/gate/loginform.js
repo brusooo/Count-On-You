@@ -50,7 +50,7 @@ const LoginForm = ({ login, create, setVisibility }) => {
     };
 
     let response = await fetch(
-      `https://countonyou.netlify.app/api/auth/emaillogin`,
+      `${window.location.origin}/api/auth/emaillogin`,
       {
         method: "POST",
         body: JSON.stringify(post),
@@ -61,6 +61,7 @@ const LoginForm = ({ login, create, setVisibility }) => {
     );
 
     let user = await response.json();
+    console.log(user)
     setTimeout(() => {
       setVisibility(false);
       if (user.result == "Successful") {
