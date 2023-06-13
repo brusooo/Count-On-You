@@ -34,3 +34,4 @@ yarn-error.log*
 
 
 *.config.js
+next.config.js
