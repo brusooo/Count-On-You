@@ -15,7 +15,7 @@ const LoginForm = ({ login, create, setVisibility }) => {
     setValues({ ...values, [e.target.name]: e.target.value });
   }
 
-  async function google(){
+  async function login() {
     return await signIn("credentials", {
       name: values.name,
       email: values.email,
@@ -28,16 +28,22 @@ const LoginForm = ({ login, create, setVisibility }) => {
   const handleLogin = async (e) => {
     e.preventDefault();
     setVisibility(true);
-    const result = google();
-    
-    result.then((data)=>{
-      if(data.url){
-        setTimeout(()=>{
-          setVisibility(false);
-        },6000)
-        Router.push(data.url);
-      }
-    })
+
+    const result = await login();
+
+    if (result.url) {
+      setTimeout(() => {
+        setVisibility(false);
+      }, 6000);
+      Router.push(data.url);
+    } else {
+      toast("Invalid credentials", {
+        toastId: "error",
+        theme: "dark",
+      });
+      setVisibility(false);
+      setValues({ name: "", email: "", password: "" });
+    }
   };
 
   const handleCreateAccount = async (e) => {

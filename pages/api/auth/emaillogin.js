@@ -1,7 +1,5 @@
 import clientPromise from "../../../lib/mongodb";
-import bcrypt from 'bcryptjs';
-
-
+import bcrypt from "bcryptjs";
 
 export default async function handler(req, res) {
   const client = await clientPromise;
@@ -10,15 +8,13 @@ export default async function handler(req, res) {
   switch (req.method) {
     case "POST":
       let bodyObject = req.body;
-      const user = await todoUsers
-        .find({ name : bodyObject.name }) 
-        .toArray();
+      const user = await todoUsers.find({ name: bodyObject.name }).toArray();
 
       if (user.length == 0) {
         let newUser = await todoUsers.insertOne(bodyObject);
         return res.json({ result: "Successful" });
       }
-      return res.json({ result : "Unsuccessful" });
+      return res.json({ result: "Unsuccessful" });
 
     case "GET":
       const users = await todoUsers
@@ -26,16 +22,14 @@ export default async function handler(req, res) {
           name: req.query.name,
           email: req.query.email,
         })
-        .toArray();
-      
-      
-      if(bcrypt.compareSync(req.query.password, users[0].password))
-      { 
-        res.json(users[0]); }
-      else{
-        return false
+        .toArray();      
+      if (
+        users.length > 0 &&
+        bcrypt.compareSync(req.query.password, users[0].password)
+      ) {
+        res.json({res : users[0]});
+      } else {
+        res.json({ res : null});
       }
-
-      break;
   }
 }

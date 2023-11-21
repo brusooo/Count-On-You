@@ -1,11 +1,10 @@
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
-import GoogleProvider from "next-auth/providers/google"
-
+import GoogleProvider from "next-auth/providers/google";
 
 export default NextAuth({
   session: {
-    jwt : true
+    jwt: true,
   },
 
   providers: [
@@ -16,9 +15,9 @@ export default NextAuth({
         params: {
           prompt: "consent",
           access_type: "offline",
-          response_type: "code"
-        }
-      }
+          response_type: "code",
+        },
+      },
     }),
     CredentialsProvider({
       name: "Credentials",
@@ -37,12 +36,8 @@ export default NextAuth({
             },
           }
         );
-        let user = await result.json();
-        
-        if (user) {
-          return user;
-        }
-        return null;
+        let { res } = await result.json();
+        return res;
       },
     }),
   ],
@@ -50,10 +45,8 @@ export default NextAuth({
   secret: process.env.SECRET_KEY,
 
   jwt: {
-    secret: process.env.SECRET_KEY
+    secret: process.env.SECRET_KEY,
   },
-
-  
 
   database: process.env.MONGODB_URI,
 
